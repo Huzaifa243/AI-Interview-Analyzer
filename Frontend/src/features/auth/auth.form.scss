@@ -1,0 +1,626 @@
+// main {
+//   min-height: 100vh;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   background: linear-gradient(
+//     135deg,
+//     #0f0f0f 0%,
+//     #18181b 50%,
+//     #4c1d95 100%
+//   );
+//   padding: 20px;
+// }
+
+// .form-container {
+//   width: 100%;
+//   max-width: 420px;
+//   background: rgba(255, 255, 255, 0.08);
+//   backdrop-filter: blur(15px);
+//   -webkit-backdrop-filter: blur(15px);
+//   border: 1px solid rgba(255, 255, 255, 0.15);
+//   border-radius: 20px;
+//   padding: 35px;
+//   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+
+//   h1 {
+//     text-align: center;
+//     color: white;
+//     margin-bottom: 30px;
+//     font-size: 2rem;
+//     font-weight: 700;
+//     letter-spacing: 1px;
+//   }
+
+//   form {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 1px;
+//   }
+// }
+
+// .input-group {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 4px;
+
+//   label {
+//     margin: 0;
+//     padding: 0;
+//     color: #e9d5ff;
+//     font-size: 0.95rem;
+//     font-weight: 500;
+//   }
+
+//   input {
+//     padding: 14px 16px;
+//     border: 1px solid rgba(168, 85, 247, 0.25);
+//     border-radius: 10px;
+//     background: rgba(255, 255, 255, 0.08);
+//     color: white;
+//     font-size: 1rem;
+//     outline: none;
+//     transition: all 0.3s ease;
+
+//     &::placeholder {
+//       color: #c4b5fd;
+//     }
+
+//     &:focus {
+//       border-color: #a855f7;
+//       box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.2);
+//     }
+//   }
+// }
+
+// .button {
+//   border: none;
+//   cursor: pointer;
+//   padding: 14px;
+//   border-radius: 10px;
+//   font-size: 1rem;
+//   font-weight: 600;
+//   transition: all 0.3s ease;
+// }
+
+// .primary-button {
+//   background: linear-gradient(
+//     135deg,
+//     #7c3aed,
+//     #a855f7
+//   );
+//   color: white;
+//   margin-top: 18px;
+
+//   &:hover {
+//     transform: translateY(-2px);
+//     box-shadow: 0 10px 20px rgba(168, 85, 247, 0.35);
+//   }
+
+//   &:active {
+//     transform: translateY(0);
+//   }
+// }
+
+// .form-footer {
+//   text-align: center;
+//   color: #d8b4fe;
+//   margin-top: 18px;
+
+//   a {
+//     color: #9539f1;  /// #c084fc   #9539f1
+//     text-decoration: none;
+//     font-weight: 600;
+
+//     &:hover {
+//       text-decoration: underline;
+//     }
+//   }
+// }
+
+
+/* ============================================
+        AI INTERVIEW ANALYZER AUTH PAGE
+============================================ */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Inter,sans-serif;
+
+    background:#08080d;
+
+    color:white;
+
+}
+
+.auth-page{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(180,108,255,.18),
+    transparent 35%),
+
+    radial-gradient(circle at bottom right,
+    rgba(255,92,162,.12),
+    transparent 30%),
+
+    linear-gradient(
+        135deg,
+        #08080d 0%,
+        #0d0d16 55%,
+        #140b22 100%
+    );
+
+}
+
+
+/* Floating Glow */
+
+.auth-page::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    background:#b46cff;
+
+    opacity:.12;
+
+    filter:blur(140px);
+
+    border-radius:50%;
+
+    left:-120px;
+
+    top:-120px;
+
+    animation:floatGlow 10s ease-in-out infinite;
+
+}
+
+.auth-page::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:360px;
+
+    height:360px;
+
+    background:#ff5ca2;
+
+    opacity:.10;
+
+    filter:blur(130px);
+
+    border-radius:50%;
+
+    right:-120px;
+
+    bottom:-100px;
+
+    animation:floatGlow2 11s ease-in-out infinite;
+
+}
+
+
+/* ================= CARD ================= */
+
+.auth-card{
+
+    width:100%;
+
+    max-width:1180px;
+
+    min-height:720px;
+
+    display:grid;
+
+    grid-template-columns:1fr 520px;
+
+    overflow:hidden;
+
+    border-radius:30px;
+
+    border:1px solid rgba(180,108,255,.18);
+
+    background:rgba(255,255,255,.04);
+
+    backdrop-filter:blur(30px);
+
+    box-shadow:
+
+    0 20px 70px rgba(0,0,0,.55),
+
+    0 0 50px rgba(180,108,255,.08);
+
+}
+
+
+/* ================= LEFT ================= */
+
+.auth-left{
+
+    padding:70px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.auth-left::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+        145deg,
+        rgba(180,108,255,.10),
+        transparent 45%
+    );
+
+}
+
+.auth-left>div{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.auth-left h1{
+
+    font-size:3.5rem;
+
+    line-height:1.15;
+
+    font-weight:800;
+
+    margin-bottom:24px;
+
+}
+
+.auth-left span{
+
+    color:#b46cff;
+
+    text-shadow:
+
+    0 0 15px rgba(180,108,255,.9),
+
+    0 0 40px rgba(180,108,255,.4);
+
+}
+
+.auth-left p{
+
+    color:#b2b2c8;
+
+    line-height:1.9;
+
+    font-size:1rem;
+
+    max-width:520px;
+
+    margin-bottom:40px;
+
+}
+
+
+/* ================= FEATURES ================= */
+
+.features{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.features div{
+
+    padding:16px 20px;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(180,108,255,.16);
+
+    color:#ece6ff;
+
+    transition:.35s;
+
+}
+
+.features div:hover{
+
+    transform:translateX(10px);
+
+    border-color:#b46cff;
+
+    box-shadow:
+
+    0 0 25px rgba(180,108,255,.18);
+
+}
+
+
+/* ================= RIGHT ================= */
+
+.auth-right{
+
+    background:rgba(10,10,18,.72);
+
+    padding:65px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.auth-right h2{
+
+    font-size:2.2rem;
+
+    font-weight:800;
+
+    margin-bottom:10px;
+
+}
+
+.subtitle{
+
+    color:#9e9eb6;
+
+    margin-bottom:40px;
+
+    line-height:1.7;
+
+}
+
+
+/* ================= FORM ================= */
+
+.auth-right form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    // gap:10px;
+
+}
+
+.input-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.input-group label{
+
+    margin-bottom:10px;
+
+    color:#ddd0ff;
+
+    font-weight:600;
+
+}
+
+.input-group input{
+
+    height:58px;
+
+    border-radius:14px;
+
+    border:1px solid rgba(180,108,255,.18);
+
+    background:#141420;
+
+    color:white;
+
+    padding-inline:18px;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:.35s;
+
+}
+
+.input-group input::placeholder{
+
+    color:#7f7f98;
+
+}
+
+.input-group input:focus{
+
+    border-color:#b46cff;
+
+    box-shadow:
+
+    0 0 0 4px rgba(180,108,255,.10);
+
+}
+
+
+/* ================= BUTTON ================= */
+
+.button{
+
+    border:none;
+
+    cursor:pointer;
+
+}
+
+.primary-button{
+
+    margin-top:10px;
+
+    height:60px;
+
+    border-radius:15px;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    color:white;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #8b5cf6,
+        #b46cff,
+        #ff5ca2
+    );
+
+    transition:.35s;
+
+}
+
+.primary-button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+    0 15px 35px rgba(180,108,255,.28);
+
+}
+
+/// transform:scale(.97);
+
+.primary-button:active{
+
+    transform:scale(.97);
+
+}
+
+
+
+/* ================= FOOTER ================= */
+
+.form-footer{
+
+    margin-top:26px;
+
+    text-align:center;
+
+    color:#a4a4bd;
+
+}
+
+.form-footer a{
+
+    color:#d48fff;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+}
+
+.form-footer a:hover{
+
+    text-decoration:underline;
+
+}
+
+
+/* ================= ANIMATION ================= */
+
+@keyframes floatGlow{
+
+0%{
+
+transform:translate(0,0);
+
+}
+
+50%{
+
+transform:translate(35px,40px);
+
+}
+
+100%{
+
+transform:translate(0,0);
+
+}
+
+}
+
+@keyframes floatGlow2{
+
+0%{
+
+transform:translate(0,0);
+
+}
+
+50%{
+
+transform:translate(-35px,-30px);
+
+}
+
+100%{
+
+transform:translate(0,0);
+
+}
+
+}
+
